@@ -1,159 +1,75 @@
-# Library Management System
+# Library Management System (C)
 
-##  Overview
+A menu-driven **C command-line application** for keeping a simple list of books and tracking whether each book is available or issued.
 
-The **Library Management System** is a simple console-based application developed using the **C programming language**. It is designed to help manage common library activities such as adding books, viewing available books, searching for books, issuing books, and returning books.
+## Features in the current source
 
-The project demonstrates the use of fundamental C programming concepts including **structures, functions, arrays, file handling, loops, conditional statements, and pointers**.
+- Add a book with an ID, title, and author
+- Display all stored books and their availability
+- Search for a book by ID
+- Issue an available book
+- Return an issued book
+- Load records from `library.txt` at startup
+- Save records to `library.txt`
 
-##  Features
+The program keeps up to 100 books in its in-memory array.
 
-* Add new books to the library
-* Display all available books
-* Search for a book
-* Issue a book to a student/member
-* Return an issued book
-* View book availability/status
-* Store and retrieve library records
-* Simple menu-driven interface
+## Requirements
 
-##  Technologies Used
+- A C compiler such as GCC
+- A terminal or command prompt
 
-* **Programming Language:** C
-* **Compiler:** GCC / MinGW
-* **Storage:** File handling
-* **Platform:** Windows, Linux, or macOS
-* **Interface:** Command Line / Terminal
+## Build and run
 
-##  Project Structure
-
-```text
-Library-Management-System/
-│
-├── main.c
-├── README.md
-├── books.dat
-└── members.dat
-```
-
-> The `.dat` files are created by the program if file storage is implemented.
-
-##  How to Run
-
-### 1. Clone the repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/library-management-system.git
+git clone https://github.com/eDDie-05/Libms.git
+cd Libms
 ```
 
-### 2. Enter the project directory
+Compile:
 
 ```bash
-cd library-management-system
+gcc -std=c11 -Wall -Wextra -pedantic lms.c -o library
 ```
 
-### 3. Compile the program
-
-Using GCC:
-
-```bash
-gcc main.c -o library
-```
-
-### 4. Run the program
-
-On macOS/Linux:
+Run on macOS or Linux:
 
 ```bash
 ./library
 ```
 
-On Windows:
+Run on Windows:
 
-```bash
-library.exe
+```powershell
+.\library.exe
 ```
 
-## 🖥️ Example Menu
+## Data storage
 
-```text
-=================================
-      LIBRARY MANAGEMENT SYSTEM
-=================================
+The application reads and writes `library.txt` in the current working directory. It is created when records are saved. Back up this file if you need to preserve the records.
 
-1. Add Book
-2. View Books
-3. Search Book
-4. Issue Book
-5. Return Book
-6. Exit
+## Current limitations
 
-Enter your choice:
-```
+- This is a small educational project, not a full library platform.
+- Book titles and author names are currently read as single words.
+- Input validation, duplicate book-ID checks, and error handling can be improved.
+- The data file is plain text; there is no database, login system, or multi-user support.
+- The application does not currently store borrower details or due dates.
 
-##  Main Operations
+## Ideas for future work
 
-### Add Book
+- Support titles and author names containing spaces.
+- Add borrower records and due dates.
+- Add overdue tracking and reporting.
+- Validate input and prevent duplicate IDs.
+- Add automated tests and database storage.
 
-Allows the librarian to enter information about a new book, such as:
+## Contributing
 
-* Book ID
-* Book title
-* Author
-* Publication year
-* Availability status
+Open an issue to discuss a proposed improvement, then submit a focused pull request with clear test steps.
 
-### View Books
+## License
 
-Displays the books currently stored in the library system.
-
-### Search Book
-
-Allows users to search for a book using its ID, title, or author.
-
-### Issue Book
-
-Records when a book is borrowed and changes its availability status.
-
-### Return Book
-
-Records the return of a borrowed book and makes it available again.
-
-##  Objectives
-
-The main objectives of this project are:
-
-1. To develop a basic library management system using C.
-2. To reduce manual management of library records.
-3. To practice C programming concepts.
-4. To demonstrate file handling and data storage.
-5. To provide a simple and user-friendly library interface.
-
-##  Limitations
-
-* The system uses a command-line interface.
-* It does not have a graphical user interface.
-* User authentication may not be included.
-* The system is designed mainly for learning and small-scale use.
-
-##  Future Improvements
-
-Future versions could include:
-
-* User login and authentication
-* Admin and student accounts
-* Database integration using SQLite or MySQL
-* Graphical User Interface (GUI)
-* Automatic overdue-book calculation
-* Fine/penalty management
-* Book reservation system
-* Report generation
-* Improved data security
-
-##  Author
-eDDie
-Developed as a C programming project.
-
-##  License
-
-This project is intended for educational purposes. You are free to modify and improve it for learning.
+No open-source license is currently specified. All rights remain with the respective content owner unless a license is added.
